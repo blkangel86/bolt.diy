@@ -19,6 +19,7 @@ export default defineConfig((config) => {
     // --- THIS IS THE FIX YOU NEEDED ---
     server: {
       allowedHosts: true,
+      host: true,
     },
     // ----------------------------------
     build: {
