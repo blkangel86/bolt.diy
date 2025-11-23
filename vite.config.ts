@@ -16,6 +16,11 @@ export default defineConfig((config) => {
     define: {
       'process.env.NODE_ENV': JSON.stringify(process.env.NODE_ENV),
     },
+    // --- THIS IS THE FIX YOU NEEDED ---
+    server: {
+      allowedHosts: true,
+    },
+    // ----------------------------------
     build: {
       target: 'esnext',
     },
@@ -77,6 +82,7 @@ export default defineConfig((config) => {
         '**/node_modules/**',
         '**/dist/**',
         '**/cypress/**',
+        '**/getImageData/**',
         '**/.{idea,git,cache,output,temp}/**',
         '**/{karma,rollup,webpack,vite,vitest,jest,ava,babel,nyc,cypress,tsup,build}.config.*',
         '**/tests/preview/**', // Exclude preview tests that require Playwright
